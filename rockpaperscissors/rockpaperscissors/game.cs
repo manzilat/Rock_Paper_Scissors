@@ -139,11 +139,13 @@ namespace rockpaperscissors
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS, ROCK CRUSHES LIZARD \n\n");
                                 player1.score++;
+                                
                             }
                             else if (player1.gesture == "PAPER")
                             {
                                 Console.WriteLine("PLAYER 2 WINS,LIZARD EATS PAPER\n\n");
                                 player2.score++;
+
                             }
                             else if (player1.gesture == "SCISSORS")
                             {
@@ -189,7 +191,7 @@ namespace rockpaperscissors
                             break;
                     }
 
-                    Console.WriteLine("\n\nSCORES:\n\tPLAYER1:\t{0}\tPLAYER2:\t{1}", player1.gesture, player2.gesture);
+                    Console.WriteLine("\n\nSCORES:\n\tPLAYER1:\t{0}\tPLAYER2:\t{1}", player1.score, player2.score);
                 }
                 if (player1.score == 3)
                 {
