@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace rockpaperscissors
 {
-    class Program
+    class Program:humanplayer
     {
         static void Main(string[] args)
         {
+            Player player = new Player();
+            player.SetPlayers();
             Game game = new Game();
+           
             game.RunGame();
+            
         }
     }
 }

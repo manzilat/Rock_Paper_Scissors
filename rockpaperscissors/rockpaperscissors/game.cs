@@ -8,25 +8,7 @@ namespace rockpaperscissors
 {
     class Game
     {
-        Player player1;
-        Player player2;
-
-        public void SetPlayers()
-        {
-            Console.WriteLine("How many players?");
-            string userInput = Console.ReadLine();
-
-            if(userInput == "1")
-            {
-                player1 = new humanplayer();
-                player2 = new computerplayer();
-            }
-            else if(userInput == "2")
-            {
-                player1 = new humanplayer();
-                player2 = new humanplayer();
-            }
-        }
+       
         public void RunGame()
         {
             //display rules
@@ -41,10 +23,10 @@ namespace rockpaperscissors
             while (playAgain)
             {
 
-                int scorePlayer = 0;
-                int scoreCPU = 0;
+                int player1 = 0;
+                int player2 = 0;
 
-                while (scorePlayer < 3 && scoreCPU < 3)
+                while (player1 < 3 && player2 < 3)
                 {
 
 
@@ -68,22 +50,22 @@ namespace rockpaperscissors
                             else if (inputPlayer == "PAPER")
                             {
                                 Console.WriteLine("YEAH!!!PLAYER WINS,PAPER COVERS ROCK\n\n");
-                                player1.score++;
+                                player1++;
                             }
                             else if (inputPlayer == "SCISSORS")
                             {
                                 Console.WriteLine("CPU WINS,ROCK CRUSHES SCISSORS!!\n\n");
-                                player2.score++;
+                                player2++;
                             }
                             else if (inputPlayer == "LIZARD")
                             {
                                 Console.WriteLine("CPU WINS,ROCK CRUSHES LIZARD!!\n\n");
-                                scoreCPU++;
+                                player2++;
                             }
                             else if (inputPlayer == "SPOCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS,SPOCK VAPORIZES ROCK\n\n");
-                                scorePlayer++;
+                                player1++;
                             }
                             break;
                         case 2:
@@ -96,23 +78,23 @@ namespace rockpaperscissors
                             else if (inputPlayer == "ROCK")
                             {
                                 Console.WriteLine("CPU WINS,PAPER COVERS ROCK!!\n\n");
-                                scoreCPU++;
+                                player2++;
                             }
                             else if (inputPlayer == "SCISSORS")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS,SCISSORS CUTS PAPER\n\n");
-                                scorePlayer++;
+                                player1++;
                             }
                             else if (inputPlayer == "LIZARD")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS,LIZARD EATS  PAPER\n\n");
-                                scorePlayer++;
+                                player1++;
 
                             }
                             else if (inputPlayer == "SPOCK")
                             {
                                 Console.WriteLine("CPU WINS,PAPER DISPROVES SPOCK!!\n\n");
-                                scoreCPU++;
+                                player2++;
                             }
                             break;
                         case 3:
@@ -125,22 +107,22 @@ namespace rockpaperscissors
                             else if (inputPlayer == "ROCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, ROCK CRUSHES SCISSORS \n\n");
-                                scorePlayer++;
+                                player1++;
                             }
                             else if (inputPlayer == "PAPER")
                             {
                                 Console.WriteLine("CPU WINS,SCISSORS CUTS PAPER\n\n");
-                                scoreCPU++;
+                                player2++;
                             }
                             else if (inputPlayer == " LIZARD")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, LIZARD DECAPITATES SCISSORS \n\n");
-                                scorePlayer++;
+                                player1++;
                             }
                             else if (inputPlayer == "SPOCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, SPOCK SMASHES SCISSORS \n\n");
-                                scorePlayer++;
+                                player1++;
                             }
                             break;
                         case 4:
@@ -153,22 +135,22 @@ namespace rockpaperscissors
                             else if (inputPlayer == "ROCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, ROCK CRUSHES LIZARD \n\n");
-                                scorePlayer++;
+                                player1++;
                             }
                             else if (inputPlayer == "PAPER")
                             {
                                 Console.WriteLine("CPU WINS,LIZARD EATS PAPER\n\n");
-                                scoreCPU++;
+                                player2++;
                             }
                             else if (inputPlayer == "SCISSORS")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, SCISSORS CUTS LIZARD \n\n");
-                                scorePlayer++;
+                                player1++;
                             }
                             else if (inputPlayer == "SPOCK")
                             {
                                 Console.WriteLine("CPU WINS,LIZARD PIOSONS SPOCK\n\n");
-                                scoreCPU++;
+                                player2++;
                             }
                             break;
                         case 5:
@@ -181,22 +163,22 @@ namespace rockpaperscissors
                             else if (inputPlayer == "ROCK")
                             {
                                 Console.WriteLine("CPU WINS,SPOCK VAPORIZES ROCK\n\n");
-                                scoreCPU++;
+                                player2++;
                             }
                             else if (inputPlayer == "PAPER")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, PAPER DISPROVES SPOCK \n\n");
-                                scorePlayer++;
+                                player1++;
                             }
                             else if (inputPlayer == "SCISSORS")
                             {
                                 Console.WriteLine("CPU WINS,SPOCK SMASHES PAPER\n\n");
-                                scoreCPU++;
+                                player2++;
                             }
                             else if (inputPlayer == "LIZARD")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS,LIZARD PIOSONS SPOCK\n\n");
-                                scorePlayer++;
+                                player1++;
                             }
                             break;
                         default:
@@ -204,13 +186,13 @@ namespace rockpaperscissors
                             break;
                     }
 
-                    Console.WriteLine("\n\nSCORES:\tPLAYER:\t{0}\tCPU:\t{1}", scorePlayer, scoreCPU);
+                    Console.WriteLine("\n\nSCORES:\tPLAYER:\t{0}\tCPU:\t{1}",player1, player2);
                 }
-                if (scorePlayer == 3)
+                if (player1 == 3)
                 {
                     Console.WriteLine("YIPPIEEE!!!PLAYER WON");
                 }
-                else if (scoreCPU == 3)
+                else if (player2 == 3)
                 {
                     Console.WriteLine("CPU WON!!");
                 }

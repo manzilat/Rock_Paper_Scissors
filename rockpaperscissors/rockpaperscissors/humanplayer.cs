@@ -10,7 +10,6 @@ namespace rockpaperscissors
     {
         public humanplayer()
         {
-          Console.WriteLine("select number of papers");
 
         }
        
