@@ -8,190 +8,182 @@ namespace rockpaperscissors
 {
     class Game
     {
-       
+        Player player1;
+        Player player2;
+        List<string> listOfGestures = new List<string>();
+
+        public Game()
+        {
+            listOfGestures.Add("rock");
+            listOfGestures.Add("paper");
+            listOfGestures.Add("scissors");
+            listOfGestures.Add("lizard");
+            listOfGestures.Add("spock");
+        }
         public void RunGame()
         {
             //display rules
             //set players
+            SetPlayers();
             //get player gestures
 
-            string inputPlayer1, inputPlayer2;
+
+            string Player1, Player2;
             int randomInt;
 
             bool playAgain = true;
 
             while (playAgain)
             {
-
-                int player1 = 0;
-                int player2 = 0;
-
-                while (player1 < 3 && player2 < 3)
+                while (player1.score < 3 && player2.score < 3)
                 {
-                    Console.WriteLine("select any one gesture:");
 
-                    List<string> listOfGestures = new List<string>();
-                    listOfGestures.Add("rock");
-                    listOfGestures.Add("paper");
-                    listOfGestures.Add("scissors");
-                    listOfGestures.Add("lizard");
-                    listOfGestures.Add("spock");
-                    foreach (string listOfGesture in listOfGestures)
+
+                    player1.SelectGestures(listOfGestures);
+                    player2.SelectGestures(listOfGestures);
+
+                    
+
+                    switch (player2.gesture)
                     {
-                       
-                        Console.WriteLine(listOfGesture);
-                       
-                    }
-
-
-                    inputPlayer1 = Console.ReadLine();
-                    inputPlayer2 = inputPlayer1.ToUpper();
-
-                    Random rnd = new Random();
-
-                    randomInt = rnd.Next(1, 6);
-
-                    switch (randomInt)
-                    {
-                        case 1:
-                            inputPlayer2 = "ROCK";
+                        case "ROCK":
                             Console.WriteLine("PLAYER 2 chose ROCK");
-                            if (inputPlayer1 == "ROCK")
+                            if (player1.gesture == "ROCK")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
-                            else if (inputPlayer1 == "PAPER")
+                            else if (player1.gesture == "PAPER")
                             {
                                 Console.WriteLine("YEAH!!!PLAYER 1 WINS,PAPER COVERS ROCK\n\n");
-                                player1++;
+                                player1.score++;
                             }
-                            else if (inputPlayer1 == "SCISSORS")
+                            else if (player1.gesture == "SCISSORS")
                             {
                                 Console.WriteLine("PLAYER 2 WINS,ROCK CRUSHES SCISSORS!!\n\n");
-                                player2++;
+                                player2.score++;
                             }
-                            else if (inputPlayer1 == "LIZARD")
+                            else if (player1.gesture == "LIZARD")
                             {
                                 Console.WriteLine("PLAYER 2 WINS,ROCK CRUSHES LIZARD!!\n\n");
-                                player2++;
+                                player2.score++;
                             }
-                            else if (inputPlayer1 == "SPOCK")
+                            else if (player1.gesture == "SPOCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS,SPOCK VAPORIZES ROCK\n\n");
-                                player1++;
+                                player1.score++;
                             }
                             break;
-                        case 2:
-                            inputPlayer2 = "PAPER";
+                        case "PAPER":
+                           
                             Console.WriteLine("PLAYER 2 chose PAPER");
-                            if (inputPlayer1 == "PAPER")
+                            if (player1.gesture == "PAPER")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
-                            else if (inputPlayer1 == "ROCK")
+                            else if (player1.gesture == "ROCK")
                             {
                                 Console.WriteLine("PLAYER 2 WINS,PAPER COVERS ROCK!!\n\n");
-                                player2++;
+                                player2.score++;
                             }
-                            else if (inputPlayer1 == "SCISSORS")
+                            else if (player1.gesture == "SCISSORS")
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS,SCISSORS CUTS PAPER\n\n");
-                                player1++;
+                                player1.score++;
                             }
-                            else if (inputPlayer1 == "LIZARD")
+                            else if (player1.gesture == "LIZARD")
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS,LIZARD EATS  PAPER\n\n");
-                                player1++;
+                                player1.score++;
 
                             }
-                            else if (inputPlayer1 == "SPOCK")
+                            else if (player1.gesture == "SPOCK")
                             {
                                 Console.WriteLine("PLAYER 2 WINS,PAPER DISPROVES SPOCK!!\n\n");
-                                player2++;
+                                player2.score++;
                             }
                             break;
-                        case 3:
-                            inputPlayer2 = "SCISSORS";
+                        case "SCISSORS":
+                           
                             Console.WriteLine("PLAYER 2 chose SCISSORS");
-                            if (inputPlayer1 == "SCISSORS")
+                            if (player1.gesture == "SCISSORS")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
-                            else if (inputPlayer1 == "ROCK")
+                            else if (player1.gesture == "ROCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS, ROCK CRUSHES SCISSORS \n\n");
-                                player1++;
+                                player1.score++;
                             }
-                            else if (inputPlayer1 == "PAPER")
+                            else if (player1.gesture == "PAPER")
                             {
                                 Console.WriteLine("PLAYER 2 WINS,SCISSORS CUTS PAPER\n\n");
-                                player2++;
+                                player2.score++;
                             }
-                            else if (inputPlayer1 == " LIZARD")
+                            else if (player1.gesture == " LIZARD")
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS, LIZARD DECAPITATES SCISSORS \n\n");
-                                player1++;
+                                player1.score++;
                             }
-                            else if (inputPlayer1 == "SPOCK")
+                            else if (player1.gesture == "SPOCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS, SPOCK SMASHES SCISSORS \n\n");
-                                player1++;
+                                player1.score++;
                             }
                             break;
-                        case 4:
-                            inputPlayer2 = "LIZARD";
+                        case "LIZARD":
+                            
                             Console.WriteLine("PLAYER 2 chose LIZARD");
-                            if (inputPlayer1 == "LIZARD")
+                            if (player1.gesture == "LIZARD")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
-                            else if (inputPlayer1 == "ROCK")
+                            else if (player1.gesture == "ROCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS, ROCK CRUSHES LIZARD \n\n");
-                                player1++;
+                                player1.score++;
                             }
-                            else if (inputPlayer1 == "PAPER")
+                            else if (player1.gesture == "PAPER")
                             {
                                 Console.WriteLine("PLAYER 2 WINS,LIZARD EATS PAPER\n\n");
-                                player2++;
+                                player2.score++;
                             }
-                            else if (inputPlayer1 == "SCISSORS")
+                            else if (player1.gesture == "SCISSORS")
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS, SCISSORS CUTS LIZARD \n\n");
-                                player1++;
+                                player1.score++;
                             }
-                            else if (inputPlayer1 == "SPOCK")
+                            else if (player1.gesture == "SPOCK")
                             {
                                 Console.WriteLine("PLAYER 2 WINS,LIZARD PIOSONS SPOCK\n\n");
-                                player2++;
+                                player2.score++;
                             }
                             break;
-                        case 5:
-                            inputPlayer2 = "SPOCK";
+                        case "SPOCK":
+                            
                             Console.WriteLine("PLAYER 2 chose SPOCK");
-                            if (inputPlayer1 == "SPOCK")
+                            if (player1.gesture == "SPOCK")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
-                            else if (inputPlayer1 == "ROCK" )
+                            else if (player1.gesture == "ROCK" )
                             {
                                 Console.WriteLine("PLAYER 2 WINS,SPOCK VAPORIZES ROCK\n\n");
-                                player2++;
+                                player2.score++;
                             }
-                            else if (inputPlayer1 == "PAPER")
+                            else if (player1.gesture == "PAPER")
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS, PAPER DISPROVES SPOCK \n\n");
-                                player1++;
+                                player1.score++;
                             }
-                            else if (inputPlayer1 == "SCISSORS")
+                            else if (player1.gesture == "SCISSORS")
                             {
                                 Console.WriteLine("PLAYER 2 WINS,SPOCK SMASHES PAPER\n\n");
-                                player2++;
+                                player2.score++;
                             }
-                            else if (inputPlayer1 == "LIZARD")
+                            else if (player1.gesture == "LIZARD")
                             {
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS,LIZARD PIOSONS SPOCK\n\n");
-                                player1++;
+                                player1.score++;
                             }
                             break;
                         default:
@@ -199,13 +191,13 @@ namespace rockpaperscissors
                             break;
                     }
 
-                    Console.WriteLine("\n\nSCORES:\tPLAYER 1:\t{0}\tPLAYER 2:\t{1}", player1, player2);
+                    Console.WriteLine("\n\nSCORES:\n\tPLAYER1:\t{0}\tPLAYER2:\t{1}", player1.gesture, player2.gesture);
                 }
-                if (player1 == 3)
+                if (player1.score == 3)
                 {
                     Console.WriteLine("YIPPIEEE!!!PLAYER 1 WON");
                 }
-                else if (player2 == 3)
+                else if (player2.score == 3)
                 {
                     Console.WriteLine("HURRAY !! PLAYER 2 WON!!");
                 }
@@ -225,9 +217,30 @@ namespace rockpaperscissors
 
             }
         }
+
+        public void SetPlayers()
+        {
+            Console.WriteLine("How many players 1 or 2?");
+            string userInput = Console.ReadLine();
+
+            if (userInput == "1")
+            {
+                player1 = new humanplayer();
+                player2 = new computerplayer();
+            }
+            else if (userInput == "2")
+            {
+                player1 = new humanplayer();
+                player2 = new humanplayer();
+            }
+
+
+        }
+
     }
-            
 
 
-    
+
+
+
 }

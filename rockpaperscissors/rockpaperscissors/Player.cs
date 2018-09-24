@@ -6,30 +6,24 @@ using System.Threading.Tasks;
 
 namespace rockpaperscissors
 {
-    class Player
+    public class Player
     {
-        Player player1;
-        Player player2;
 
         public int score;
-        public void SetPlayers()
-
+        public string gesture;
+        public Player()
         {
-            Console.WriteLine("How many players 1 or 2?");
-            string userInput = Console.ReadLine();
-
-            if (userInput == "1")
-            {
-                player1 = new humanplayer();
-                player2 = new computerplayer();
-            }
-            else if (userInput == "2")
-            {
-                player1 = new humanplayer();
-                player2 = new humanplayer();
-            }
-           
-      
+            score = 0;
         }
+        public string SelectGestures(List<string> gestures)
+        {
+            Console.WriteLine("select any one gesture:");
+            foreach (string gesture in gestures)
+            {
+                Console.WriteLine(gesture);
+            }
+            return  Console.ReadLine().ToUpper();
+        }
+
     }
 }
