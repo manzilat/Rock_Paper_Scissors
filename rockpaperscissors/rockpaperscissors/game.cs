@@ -6,10 +6,33 @@ using System.Threading.Tasks;
 
 namespace rockpaperscissors
 {
-    class game
+    class Game
     {
-        static void Main(string[] args)
+        Player player1;
+        Player player2;
+
+        public void SetPlayers()
         {
+            Console.WriteLine("How many players?");
+            string userInput = Console.ReadLine();
+
+            if(userInput == "1")
+            {
+                player1 = new humanplayer();
+                player2 = new computerplayer();
+            }
+            else if(userInput == "2")
+            {
+                player1 = new humanplayer();
+                player2 = new humanplayer();
+            }
+        }
+        public void RunGame()
+        {
+            //display rules
+            //set players
+            //get player gestures
+
             string inputPlayer, inputCPU;
             int randomInt;
 
@@ -45,12 +68,12 @@ namespace rockpaperscissors
                             else if (inputPlayer == "PAPER")
                             {
                                 Console.WriteLine("YEAH!!!PLAYER WINS,PAPER COVERS ROCK\n\n");
-                                scorePlayer++;
+                                player1.score++;
                             }
                             else if (inputPlayer == "SCISSORS")
                             {
                                 Console.WriteLine("CPU WINS,ROCK CRUSHES SCISSORS!!\n\n");
-                                scoreCPU++;
+                                player2.score++;
                             }
                             else if (inputPlayer == "LIZARD")
                             {
@@ -207,7 +230,9 @@ namespace rockpaperscissors
 
             }
         }
-
-
     }
+            
+
+
+    
 }

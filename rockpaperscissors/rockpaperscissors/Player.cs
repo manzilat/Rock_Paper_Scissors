@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace rockpaperscissors
 {
-    class humanplayer : Player
+    class Player
     {
-        public humanplayer()
-        {
-          Console.WriteLine("select number of papers");
-
-        }
-       
-}
+        public int score;
+    }
 }
