@@ -9,12 +9,13 @@ namespace rockpaperscissors
     class computerplayer : Player
     {
 
+        
         Random rnd = new Random();
-        public string SelectGestures(List<string> gestures)
+        public override void SelectGestures(List<string> gestures)
         {
   
             int randomInt = rnd.Next(0, gestures.Count);
-           return gesture = gestures[randomInt].ToUpper();
+            gesture = gestures[randomInt].ToUpper();
         }
     }
 }

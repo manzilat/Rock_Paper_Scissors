@@ -27,9 +27,7 @@ namespace rockpaperscissors
             SetPlayers();
             //get player gestures
 
-
-            string Player1, Player2;
-            int randomInt;
+            
 
             bool playAgain = true;
 
