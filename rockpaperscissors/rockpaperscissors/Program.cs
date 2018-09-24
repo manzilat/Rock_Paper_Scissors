@@ -13,7 +13,6 @@ namespace rockpaperscissors
             Player player = new Player();
             player.SetPlayers();
             Game game = new Game();
-           
             game.RunGame();
             
         }

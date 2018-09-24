@@ -13,8 +13,9 @@ namespace rockpaperscissors
 
         public int score;
         public void SetPlayers()
+
         {
-            Console.WriteLine("How many players?");
+            Console.WriteLine("How many players 1 or 2?");
             string userInput = Console.ReadLine();
 
             if (userInput == "1")
@@ -27,6 +28,8 @@ namespace rockpaperscissors
                 player1 = new humanplayer();
                 player2 = new humanplayer();
             }
+           
+      
         }
     }
 }

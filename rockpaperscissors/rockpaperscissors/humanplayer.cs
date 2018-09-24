@@ -10,7 +10,8 @@ namespace rockpaperscissors
     {
         public humanplayer()
         {
-
+            Console.WriteLine("enter you're name:");
+            string userInput = Console.ReadLine();
         }
        
 }

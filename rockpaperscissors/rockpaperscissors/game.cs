@@ -15,7 +15,7 @@ namespace rockpaperscissors
             //set players
             //get player gestures
 
-            string inputPlayer, inputCPU;
+            string inputPlayer1, inputPlayer2;
             int randomInt;
 
             bool playAgain = true;
@@ -28,11 +28,20 @@ namespace rockpaperscissors
 
                 while (player1 < 3 && player2 < 3)
                 {
+                    List<string> listOfGestures = new List<string>();
+                    listOfGestures.Add("rock");
+                    listOfGestures.Add("paper");
+                    listOfGestures.Add("scissors");
+                    listOfGestures.Add("lizard");
+                    listOfGestures.Add("spock");
+                    foreach (string listOfGesture in listOfGestures)
+                    {
+                        Console.WriteLine(listOfGesture);
+                    }
 
 
-                    Console.Write("Choose between ROCK, PAPER ,SCISSORS ,LIZARD and SPOCK:    ");
-                    inputPlayer = Console.ReadLine();
-                    inputPlayer = inputPlayer.ToUpper();
+                    inputPlayer1 = Console.ReadLine();
+                    inputPlayer2 = inputPlayer1.ToUpper();
 
                     Random rnd = new Random();
 
@@ -41,141 +50,141 @@ namespace rockpaperscissors
                     switch (randomInt)
                     {
                         case 1:
-                            inputCPU = "ROCK";
+                            inputPlayer2 = "ROCK";
                             Console.WriteLine("Computer chose ROCK");
-                            if (inputPlayer == "ROCK")
+                            if (inputPlayer1 == "ROCK")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
-                            else if (inputPlayer == "PAPER")
+                            else if (inputPlayer1 == "PAPER")
                             {
                                 Console.WriteLine("YEAH!!!PLAYER WINS,PAPER COVERS ROCK\n\n");
                                 player1++;
                             }
-                            else if (inputPlayer == "SCISSORS")
+                            else if (inputPlayer1 == "SCISSORS")
                             {
                                 Console.WriteLine("CPU WINS,ROCK CRUSHES SCISSORS!!\n\n");
                                 player2++;
                             }
-                            else if (inputPlayer == "LIZARD")
+                            else if (inputPlayer1 == "LIZARD")
                             {
                                 Console.WriteLine("CPU WINS,ROCK CRUSHES LIZARD!!\n\n");
                                 player2++;
                             }
-                            else if (inputPlayer == "SPOCK")
+                            else if (inputPlayer1 == "SPOCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS,SPOCK VAPORIZES ROCK\n\n");
                                 player1++;
                             }
                             break;
                         case 2:
-                            inputCPU = "PAPER";
+                            inputPlayer2 = "PAPER";
                             Console.WriteLine("Computer chose PAPER");
-                            if (inputPlayer == "PAPER")
+                            if (inputPlayer1 == "PAPER")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
-                            else if (inputPlayer == "ROCK")
+                            else if (inputPlayer1 == "ROCK")
                             {
                                 Console.WriteLine("CPU WINS,PAPER COVERS ROCK!!\n\n");
                                 player2++;
                             }
-                            else if (inputPlayer == "SCISSORS")
+                            else if (inputPlayer1 == "SCISSORS")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS,SCISSORS CUTS PAPER\n\n");
                                 player1++;
                             }
-                            else if (inputPlayer == "LIZARD")
+                            else if (inputPlayer1 == "LIZARD")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS,LIZARD EATS  PAPER\n\n");
                                 player1++;
 
                             }
-                            else if (inputPlayer == "SPOCK")
+                            else if (inputPlayer1 == "SPOCK")
                             {
                                 Console.WriteLine("CPU WINS,PAPER DISPROVES SPOCK!!\n\n");
                                 player2++;
                             }
                             break;
                         case 3:
-                            inputCPU = "SCISSORS";
+                            inputPlayer2 = "SCISSORS";
                             Console.WriteLine("Computer chose SCISSORS");
-                            if (inputPlayer == "SCISSORS")
+                            if (inputPlayer1 == "SCISSORS")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
-                            else if (inputPlayer == "ROCK")
+                            else if (inputPlayer1 == "ROCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, ROCK CRUSHES SCISSORS \n\n");
                                 player1++;
                             }
-                            else if (inputPlayer == "PAPER")
+                            else if (inputPlayer1 == "PAPER")
                             {
                                 Console.WriteLine("CPU WINS,SCISSORS CUTS PAPER\n\n");
                                 player2++;
                             }
-                            else if (inputPlayer == " LIZARD")
+                            else if (inputPlayer1 == " LIZARD")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, LIZARD DECAPITATES SCISSORS \n\n");
                                 player1++;
                             }
-                            else if (inputPlayer == "SPOCK")
+                            else if (inputPlayer1 == "SPOCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, SPOCK SMASHES SCISSORS \n\n");
                                 player1++;
                             }
                             break;
                         case 4:
-                            inputCPU = "LIZARD";
+                            inputPlayer2 = "LIZARD";
                             Console.WriteLine("Computer chose LIZARD");
-                            if (inputPlayer == "LIZARD")
+                            if (inputPlayer1 == "LIZARD")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
-                            else if (inputPlayer == "ROCK")
+                            else if (inputPlayer1 == "ROCK")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, ROCK CRUSHES LIZARD \n\n");
                                 player1++;
                             }
-                            else if (inputPlayer == "PAPER")
+                            else if (inputPlayer1 == "PAPER")
                             {
                                 Console.WriteLine("CPU WINS,LIZARD EATS PAPER\n\n");
                                 player2++;
                             }
-                            else if (inputPlayer == "SCISSORS")
+                            else if (inputPlayer1 == "SCISSORS")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, SCISSORS CUTS LIZARD \n\n");
                                 player1++;
                             }
-                            else if (inputPlayer == "SPOCK")
+                            else if (inputPlayer1 == "SPOCK")
                             {
                                 Console.WriteLine("CPU WINS,LIZARD PIOSONS SPOCK\n\n");
                                 player2++;
                             }
                             break;
                         case 5:
-                            inputCPU = "SPOCK";
+                            inputPlayer2 = "SPOCK";
                             Console.WriteLine("Computer chose SPOCK");
-                            if (inputPlayer == "SPOCK")
+                            if (inputPlayer1 == "SPOCK")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
-                            else if (inputPlayer == "ROCK")
+                            else if (inputPlayer1 == "ROCK")
                             {
                                 Console.WriteLine("CPU WINS,SPOCK VAPORIZES ROCK\n\n");
                                 player2++;
                             }
-                            else if (inputPlayer == "PAPER")
+                            else if (inputPlayer1 == "PAPER")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS, PAPER DISPROVES SPOCK \n\n");
                                 player1++;
                             }
-                            else if (inputPlayer == "SCISSORS")
+                            else if (inputPlayer1 == "SCISSORS")
                             {
                                 Console.WriteLine("CPU WINS,SPOCK SMASHES PAPER\n\n");
                                 player2++;
                             }
-                            else if (inputPlayer == "LIZARD")
+                            else if (inputPlayer1 == "LIZARD")
                             {
                                 Console.WriteLine("YEAH!!PLAYER WINS,LIZARD PIOSONS SPOCK\n\n");
                                 player1++;
