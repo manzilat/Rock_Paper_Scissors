@@ -14,11 +14,15 @@ namespace rockpaperscissors
 
         public Game()
         {
-            listOfGestures.Add("rock");
-            listOfGestures.Add("paper");
-            listOfGestures.Add("scissors");
-            listOfGestures.Add("lizard");
-            listOfGestures.Add("spock");
+            
+            
+            listOfGestures.Add("ROCK");
+            listOfGestures.Add("PAPER");
+            listOfGestures.Add("SCISSOR");
+            listOfGestures.Add("LIZARD");
+            listOfGestures.Add("SPOCK");
+            listOfGestures.Add("");
+         
         }
         public void RunGame()
         {
@@ -38,6 +42,8 @@ namespace rockpaperscissors
 
 
                     player1.SelectGestures(listOfGestures);
+
+
                     player2.SelectGestures(listOfGestures);
                    
                     
@@ -55,9 +61,9 @@ namespace rockpaperscissors
                                 Console.WriteLine("YEAH!!!PLAYER 1 WINS,PAPER COVERS ROCK\n\n");
                                 player1.score++;
                             }
-                            else if (player1.gesture == "SCISSORS")
+                            else if (player1.gesture == "SCISSOR")
                             {
-                                Console.WriteLine("PLAYER 2 WINS,ROCK CRUSHES SCISSORS!!\n\n");
+                                Console.WriteLine("PLAYER 2 WINS,ROCK CRUSHES SCISSOR!!\n\n");
                                 player2.score++;
                             }
                             else if (player1.gesture == "LIZARD")
@@ -84,9 +90,9 @@ namespace rockpaperscissors
                                 Console.WriteLine("PLAYER 2 WINS,PAPER COVERS ROCK!!\n\n");
                                 player2.score++;
                             }
-                            else if (player1.gesture == "SCISSORS")
+                            else if (player1.gesture == "SCISSOR")
                             {
-                                Console.WriteLine("YEAH!!PLAYER 1 WINS,SCISSORS CUTS PAPER\n\n");
+                                Console.WriteLine("YEAH!!PLAYER 1 WINS,SCISSOR CUTS PAPER\n\n");
                                 player1.score++;
                             }
                             else if (player1.gesture == "LIZARD")
@@ -103,29 +109,29 @@ namespace rockpaperscissors
                             break;
                         case "SCISSORS":
                            
-                            Console.WriteLine("PLAYER 2 chose SCISSORS");
-                            if (player1.gesture == "SCISSORS")
+                            Console.WriteLine("PLAYER 2 chose SCISSOR");
+                            if (player1.gesture == "SCISSOR")
                             {
                                 Console.WriteLine("DRAW!!\n\n");
                             }
                             else if (player1.gesture == "ROCK")
                             {
-                                Console.WriteLine("YEAH!!PLAYER 1 WINS, ROCK CRUSHES SCISSORS \n\n");
+                                Console.WriteLine("YEAH!!PLAYER 1 WINS, ROCK CRUSHES SCISSOR \n\n");
                                 player1.score++;
                             }
                             else if (player1.gesture == "PAPER")
                             {
-                                Console.WriteLine("PLAYER 2 WINS,SCISSORS CUTS PAPER\n\n");
+                                Console.WriteLine("PLAYER 2 WINS,SCISSOR CUTS PAPER\n\n");
                                 player2.score++;
                             }
                             else if (player1.gesture == " LIZARD")
                             {
-                                Console.WriteLine("YEAH!!PLAYER 1 WINS, LIZARD DECAPITATES SCISSORS \n\n");
+                                Console.WriteLine("YEAH!!PLAYER 1 WINS, LIZARD DECAPITATES SCISSOR \n\n");
                                 player1.score++;
                             }
                             else if (player1.gesture == "SPOCK")
                             {
-                                Console.WriteLine("YEAH!!PLAYER 1 WINS, SPOCK SMASHES SCISSORS \n\n");
+                                Console.WriteLine("YEAH!!PLAYER 1 WINS, SPOCK SMASHES SCISSOR \n\n");
                                 player1.score++;
                             }
                             break;
@@ -148,9 +154,9 @@ namespace rockpaperscissors
                                 player2.score++;
 
                             }
-                            else if (player1.gesture == "SCISSORS")
+                            else if (player1.gesture == "SCISSOR")
                             {
-                                Console.WriteLine("YEAH!!PLAYER 1 WINS, SCISSORS CUTS LIZARD \n\n");
+                                Console.WriteLine("YEAH!!PLAYER 1 WINS, SCISSOR CUTS LIZARD \n\n");
                                 player1.score++;
                             }
                             else if (player1.gesture == "SPOCK")
@@ -176,9 +182,9 @@ namespace rockpaperscissors
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS, PAPER DISPROVES SPOCK \n\n");
                                 player1.score++;
                             }
-                            else if (player1.gesture == "SCISSORS")
+                            else if (player1.gesture == "SCISSOR")
                             {
-                                Console.WriteLine("PLAYER 2 WINS,SPOCK SMASHES PAPER\n\n");
+                                Console.WriteLine("PLAYER 2 WINS,SPOCK SMASHES SCISSOR\n\n");
                                 player2.score++;
                             }
                             else if (player1.gesture == "LIZARD")
@@ -186,8 +192,7 @@ namespace rockpaperscissors
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS,LIZARD PIOSONS SPOCK\n\n");
                                 player1.score++;
                             }
-                            else
-                                Console.WriteLine("Invalid entry!");
+                            
                             break;
                             
                         default:
