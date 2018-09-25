@@ -27,9 +27,9 @@ namespace rockpaperscissors
             SetPlayers();
             //get player gestures
 
-            
+           
 
-            bool playAgain = true;
+                bool playAgain = true;
 
             while (playAgain)
             {
@@ -39,7 +39,7 @@ namespace rockpaperscissors
 
                     player1.SelectGestures(listOfGestures);
                     player2.SelectGestures(listOfGestures);
-
+                   
                     
 
                     switch (player2.gesture)
@@ -70,6 +70,7 @@ namespace rockpaperscissors
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS,SPOCK VAPORIZES ROCK\n\n");
                                 player1.score++;
                             }
+                            
                             break;
                         case "PAPER":
                            
@@ -185,13 +186,18 @@ namespace rockpaperscissors
                                 Console.WriteLine("YEAH!!PLAYER 1 WINS,LIZARD PIOSONS SPOCK\n\n");
                                 player1.score++;
                             }
+                            else
+                                Console.WriteLine("Invalid entry!");
                             break;
+                            
                         default:
+
                             Console.WriteLine("Invalid entry!");
                             break;
+                            
                     }
 
-                    Console.WriteLine("\n\nSCORES:\n\tPLAYER1:\t{0}\tPLAYER2:\t{1}", player1.score, player2.score);
+                    Console.WriteLine("\n\nSCORES:\nPLAYER1:\t{0}\tPLAYER2:\t{1}", player1.score, player2.score);
                 }
                 if (player1.score == 3)
                 {
@@ -206,6 +212,8 @@ namespace rockpaperscissors
                 if ((loop == "Y") || (loop == "YES") || (loop == "y")||(loop == "yes"))
                 {
                     playAgain = true;
+                    player1.score = 0;
+                    player2.score = 0;
                     Console.Clear();
                 }
                 else if ((loop == "N") || (loop == "n") || (loop == "no") || (loop == "NO") )
