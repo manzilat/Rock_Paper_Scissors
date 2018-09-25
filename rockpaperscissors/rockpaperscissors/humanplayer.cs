@@ -11,6 +11,7 @@ namespace rockpaperscissors
         public humanplayer()
         {
         }
+
         public override void SelectGestures(List<string> gestures)
         {
             Console.WriteLine("select any one gesture:");

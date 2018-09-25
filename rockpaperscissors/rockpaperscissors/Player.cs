@@ -15,6 +15,7 @@ namespace rockpaperscissors
         {
             score = 0;
         }
+        
         virtual public void SelectGestures(List<string> gestures)
         {
 

@@ -10,6 +10,7 @@ namespace rockpaperscissors
     {
         Player player1;
         Player player2;
+        
         List<string> listOfGestures = new List<string>();
 
         public Game()
