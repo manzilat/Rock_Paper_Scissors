@@ -20,7 +20,8 @@ namespace rockpaperscissors
             Rules = Rules + "Lizard eats paper\n";
             Rules = Rules + "Paper disproves Spock\n";
             Rules = Rules + "Spock vaporizes rock\n";
-            Rules = Rules + "Rock crushes scissors\n";
+            Rules = Rules + "Rock crushes scissors\n\n";
+            Rules = Rules + "THIS GAME IS BASED ON BEST OF 3,WHO EVER WINS 3 POINTS  WILL BE THE WINNER ";
 
             Console.WriteLine(Rules);
 
